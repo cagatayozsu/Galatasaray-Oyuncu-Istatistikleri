@@ -1,0 +1,606 @@
+/* Genel Sayfa Stili */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Stileri */
+header {
+    background: #800000;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+header nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    text-decoration: underline;
+}
+
+header nav span {
+    color: #ffcc00;
+    font-weight: bold;
+    margin-left: 15px;
+    border-left: 2px solid #ffcc00;
+    padding-left: 15px;
+}
+
+header nav a:last-child {
+    background: rgba(255, 0, 0, 0.3);
+}
+
+/* Ana İçerik */
+main {
+    flex: 1;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Başlıklar */
+h1 {
+    color: #ffcc00;
+    font-size: 32px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2 {
+    color: #ffcc00;
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #ffcc00;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+h4 {
+    color: #ffcc00;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Paragraf ve Metin */
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #ddd;
+}
+
+a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Formlar */
+form {
+    margin-top: 20px;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    background: #222;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background: #e6b800;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 204, 0, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Checkbox Stilleri */
+input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Hata ve Başarı Mesajları */
+.error,
+[style*="color:red"] {
+    color: #ff6b6b !important;
+    padding: 10px;
+    border-left: 3px solid #ff6b6b;
+    margin-bottom: 15px;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 5px;
+}
+
+.success,
+[style*="color:limegreen"] {
+    color: #51cf66 !important;
+    padding: 10px;
+    border-left: 3px solid #51cf66;
+    margin-bottom: 15px;
+    background: rgba(81, 207, 102, 0.1);
+    border-radius: 5px;
+}
+
+/* Oyuncu Kartları Stilleri - YAN YANA GRID */
+.oyuncu-karti {
+    display: inline-block;
+    margin: 8px;
+    padding: 12px;
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    text-align: center;
+    width: 160px;
+    background: #1a1a1a;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    vertical-align: top;
+}
+
+.oyuncu-karti:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 204, 0, 0.3);
+}
+
+.oyuncu-karti img {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.oyuncu-karti h4 {
+    margin: 5px 0;
+    color: #ffcc00;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.oyuncu-karti p {
+    margin: 3px 0;
+    font-size: 11px;
+    color: #eee;
+    text-align: center;
+}
+
+.oyuncu-karti .istatistik {
+    background: #222;
+    padding: 6px;
+    border-radius: 6px;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #ffcc00;
+}
+
+.baslik {
+    color: #ffcc00;
+    text-align: center;
+    font-size: 24px;
+    margin: 30px 0 20px 0;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 10px;
+}
+
+/* Favori 11 Sayfası - Yeni Stil */
+.player-section-title {
+    color: #ffcc00;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.player-grid {
+    text-align: center;
+    font-size: 0;
+    margin: 20px 0;
+}
+
+.player-card {
+    display: inline-block;
+    margin: 8px;
+    padding: 12px;
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    text-align: center;
+    width: 160px;
+    background: #1a1a1a;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.player-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(255, 204, 0, 0.3);
+}
+
+.player-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.player-info {
+    text-align: center;
+}
+
+.player-info h3 {
+    margin: 5px 0;
+    color: #ffcc00;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.player-info p {
+    margin: 3px 0;
+    font-size: 11px;
+    color: #eee;
+    text-align: center;
+}
+
+/* Resim Satırı */
+.image-row {
+    margin: 30px 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image-row img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+
+.image-row img:hover {
+    transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    border-top: 1px solid #444;
+    margin-top: auto;
+}
+
+footer small {
+    display: block;
+}
+
+/* Pre ve Code Blokları */
+pre {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #333;
+    color: #ffcc00;
+    margin: 15px 0;
+}
+
+code {
+    background: #222;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ffcc00;
+}
+
+/* Select Dropdown */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffcc00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 40px;
+}
+
+/* Responsive Tasarım - Tablet */
+@media (max-width: 992px) {
+    main {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .oyuncu-karti,
+    .player-card {
+        width: 150px;
+        margin: 6px;
+        padding: 10px;
+    }
+
+    .oyuncu-karti img,
+    .player-card img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .oyuncu-karti h4,
+    .player-info h3 {
+        font-size: 12px;
+    }
+
+    .oyuncu-karti p,
+    .player-info p {
+        font-size: 10px;
+    }
+
+    .istatistik {
+        font-size: 9px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    header {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    header nav a {
+        display: block;
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+
+    .image-row {
+        flex-direction: column;
+    }
+
+    .image-row img {
+        width: 100%;
+    }
+
+    .oyuncu-karti,
+    .player-card {
+        width: 140px;
+        margin: 5px;
+        padding: 8px;
+    }
+
+    .oyuncu-karti img,
+    .player-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea,
+    select {
+        max-width: 100%;
+    }
+
+    .baslik {
+        font-size: 18px;
+    }
+}
+
+/* Responsive Tasarım - Mobil */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 14px;
+    }
+
+    header nav a {
+        font-size: 11px;
+        padding: 3px 6px;
+        margin-bottom: 4px;
+    }
+
+    header nav span {
+        margin-left: 0;
+        border-left: none;
+        padding-left: 0;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .oyuncu-karti,
+    .player-card {
+        width: 110px;
+        margin: 4px;
+        padding: 6px;
+    }
+
+    .oyuncu-karti img,
+    .player-card img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .oyuncu-karti h4,
+    .player-info h3 {
+        font-size: 11px;
+    }
+
+    .oyuncu-karti p,
+    .player-info p {
+        font-size: 9px;
+    }
+
+    .istatistik {
+        font-size: 8px !important;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 12px;
+        margin-right: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea,
+    select {
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    label {
+        font-size: 12px;
+    }
+
+    .baslik {
+        font-size: 14px;
+        margin: 15px 0 10px 0;
+    }
+
+    p {
+        text-align: left;
+        font-size: 12px;
+    }
+
+    form {
+        padding: 15px;
+    }
+}
